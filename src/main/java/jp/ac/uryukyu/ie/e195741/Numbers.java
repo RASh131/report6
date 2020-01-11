@@ -5,10 +5,12 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-public class NumberSet {
+public class Numbers {
     private List<Integer> numbers = new ArrayList<Integer>();
+    private  String name;
 
-    public NumberSet(String name) {
+    public Numbers(String name) {
+        this.name = name;
         if (name == "enemy") {
             for (int i = 0; i <= 9; i++) {
                 numbers.add(i);
@@ -25,7 +27,9 @@ public class NumberSet {
             for (int i = 0; i < preset.length();i++ ){
                 numbers.add(Integer.parseInt(preset.substring(i,i+1)));
             }
-            System.out.println(numbers);
         }
+    }
+    public List<Integer> getNumber(){
+        return this.numbers;
     }
 }
