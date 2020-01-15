@@ -13,6 +13,8 @@ public class Numbers {
         this.name = name;
         if (this.name == "enemy") {
             randNumber();
+            System.out.println("相手が数字をセットしました : [?, ?, ?]");
+            System.out.println("---------------------");
         }
         else if(this.name == "player"){
             System.out.println("重複しない三桁の数字を入力してください");
@@ -21,6 +23,7 @@ public class Numbers {
             for (int i = 0; i < preset.length();i++ ){
                 this.numbers.add(Integer.parseInt(preset.substring(i,i+1)));
             }
+            System.out.println("自分の数字をセットしました : "+this.numbers);
         }
     }
     public Numbers() { randNumber(); }
