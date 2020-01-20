@@ -3,15 +3,27 @@ package jp.ac.uryukyu.ie.e195741;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
+/**
+ * 数字の宣言や数字の判定をするクラス。
+ */
 public class GameMaster {
     private List<Integer> enem_num = new ArrayList<Integer>();
     private List<Integer> self_num = new ArrayList<Integer>();
     private String name;
+    /**
+     * GameMasterクラスのコンストラクタ
+     * @param enem 相手の設定した数字
+     * @param self 自分の設定した数字
+     */
     public GameMaster(List<Integer> enem, List<Integer> self) {
         this.enem_num = enem;
         this.self_num = self;
     }
+    /**
+     * プレイヤー＆NPCに数字宣言をさせるメソッド
+     * @param turn_num どちらのターンか判定するための値
+     * @return check いくつEATしたのか値を返す
+     */
     public int start(int turn_num){
         int check = 0;
         if (turn_num % 2 == 0) {
@@ -39,6 +51,12 @@ public class GameMaster {
         }
         return check;
     }
+    /**
+     * プレイヤー＆NPCに数字宣言をさせるメソッド
+     * @param target_num プレイヤーの場合は指定した値、NPCは乱数
+     * @param num プレイヤーの場合はNPC、NPCの場合はプレイヤーの決定した値
+     * @return check いくつEATしたのか値を返す
+     */
     public int numberCheck(List<Integer> target_num, List<Integer> num){
         int eat = 0;
         int bite = 0;
@@ -52,9 +70,17 @@ public class GameMaster {
         System.out.println("EAT :"+eat+"  BITE :"+bite);
         return eat;
     }
+    /**
+     * 現在のターンのプレイヤーがどちらかを返す
+     * @return 名前
+     */
     public String getName(){
         return this.name;
     }
+    /**
+     * 指定された分の長さの遅延を作る
+     * @param time 遅延する時間
+     */
     public void waitMoment(int time) {
         try {
             Thread.sleep(time);

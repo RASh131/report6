@@ -1,6 +1,9 @@
 package jp.ac.uryukyu.ie.e195741;
 import java.util.Random;
 
+/**
+ * ヌメロンを始めるためのメインのクラス。
+ */
 public class Main {
     public static void main(String[] args){
         Random rand = new Random();
